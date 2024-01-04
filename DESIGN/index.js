@@ -28,16 +28,18 @@ function addEmployee() {
 
   const addEmployee = document.getElementById("addEmployee");
   addEmployee.style.visibility = "visible";
+  addEmployee.style.opacity = "1";
 
   const overlay = document.getElementById("overlay");
   overlay.style.visibility = "visible";
+  overlay.style.opacity = "1";
 
   // const miniOption = document.getElementById("miniOption");
   // miniOption.style.visibility = "hidden";
 
 }
 
-// edit employee popup
+// edit employe
 function editEmployee(id) {
 
   const editEmployee = document.getElementById("editEmployee");
@@ -92,9 +94,15 @@ function editEmployeeSuccessPopup() {
 
 // cancel button function
 function cancel(){
-  
+  /////////////////////////////////////////////////////////////////////
   const addEmployee = document.getElementById("addEmployee");
-  addEmployee.style.visibility="hidden";
+  addEmployee.style.opacity = "0";
+
+  //time out function
+  const mytimeout = setTimeout(addEmployeeout,500);
+  function addEmployeeout(){
+    addEmployee.style.visibility="hidden";
+  }
 
   const editEmployee = document.getElementById("editEmployee");
   editEmployee.style.visibility="hidden";
@@ -103,7 +111,13 @@ function cancel(){
   deleteEmployeePopupMenu.style.visibility="hidden";
 
   const overlay = document.getElementById("overlay");
-  overlay.style.visibility="hidden";
+  overlay.style.opacity = "0";
+
+  //timeou tfunction
+  const myTimeout2 = setTimeout(overlayout,500);
+  function overlayout(){
+    overlay.style.visibility="hidden";
+  }
 
   const addEmployeeForm = document.getElementById("addEmployeeForm");
   addEmployeeForm.reset();

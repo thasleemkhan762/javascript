@@ -753,6 +753,9 @@ hr{
         top: 0;
         background: rgba(5, 3, 16, 0.80);
         visibility: hidden;
+        /* ///// */
+        opacity: 0;
+        transition: visibility 0s, opacity 0.2s linear;
     }
 
     .mini-background{
@@ -810,6 +813,8 @@ hr{
 
     #addEmployee{
         visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.2s linear;
     }
      .editEmployee-div{
         visibility: hidden;
