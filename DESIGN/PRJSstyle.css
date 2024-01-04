@@ -308,6 +308,8 @@ hr{
         top: 145px;
         left: 35%;
         display: none;
+        font-weight: 600;
+        color: #2B3674;
     }
 
     .employee-list-input {
