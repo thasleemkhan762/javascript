@@ -113,7 +113,7 @@ function cancel(){
   const overlay = document.getElementById("overlay");
   overlay.style.opacity = "0";
 
-  //timeou tfunction
+  //timeoutfunction
   const myTimeout2 = setTimeout(overlayout,500);
   function overlayout(){
     overlay.style.visibility="hidden";
