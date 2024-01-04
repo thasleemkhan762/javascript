@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./PRJSEDstyle.css"  type="text/css">
+    <link rel="stylesheet" href="./PRJSstyle.css"  type="text/css">
+    <link rel="stylesheet" href="./addEmployeeCss.css"  type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+
+            
+
+             <div class="col-lg-2 col-1-ed"> 
+
+                <div class="sidebar-ed">
+                    
+                    <!-- sidebar title -->
+
+                    <div class="sidebar-title">
+                        <p class="employee-title">Employee</p>
+                        <p class="management-title">Management</p>
+                    </div>
+
+                    <hr>
+
+                    <!-- sidbar body -->
+
+                    <div class="sidebar-body">
+                        <ul class="sidebar-box">
+                            <li class="sidebar-list">
+
+                              <i class="fa-solid fa-house"></i>
+
+                              Dashboard
+                            </li>
+                            <a href="./PRJSdesign.html">
+                              <li class="sidebar-list" >
+
+                                <!-- <div class="rectangle"></div> -->
+
+                                <i class="fa-solid fa-chart-simple"></i>
+
+                              Employees
+                            </li>
+                            </a>
+                            <li class="sidebar-list">
+
+                              <i class="fa-solid fa-user"></i>
+
+                              My profile
+                            </li>
+                            <li class="sidebar-list">
+
+                              <i class="fa-solid fa-lock"></i>
+
+                              Logout
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- sidebar footer -->
+                    
+                    <footer class="sidebar-footer-ed">
+                      <hr class="ed-footer-hr">
+                      <div class="sidebar-footer">
+                        <p class="sidebar-footer-text">Powered by</p>
+                        <img class="stackup-logo" src="/stackuplogo.png" alt="stackup">
+                    </div>
+                    </footer>
+
+
+
+
+                </div>
+               
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="col-lg-10 col-2">
+              <div class="mainbody-ed">
+
+                <!-- mainbody title -->
+
+                <div class="mainbody-title">
+                  <div class="mainbody-title-head">
+                    <p class="dash-emplo">Dashboard / Employees / Employee Details</p>
+                    <p class="title-main">Employee Details</p>
+                  </div>
+
+                  <div class="searchbar-icon-pic">
+                    <div class="title-searchbar">
+                      <input class="input-search" type="text" placeholder="&#xF002;   Search" style="font-family:Arial, FontAwesome" />
+  
+                      <svg class="bell-icon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_0_1010)">
+                          <path d="M19.2901 17.7158L18.0001 16.4151V11.3736C18.0001 8.27813 16.3601 5.68679 13.5001 5.00114V4.3155C13.5001 3.47861 12.8301 2.80304 12.0001 2.80304C11.1701 2.80304 10.5001 3.47861 10.5001 4.3155V5.00114C7.63005 5.68679 6.00005 8.26804 6.00005 11.3736V16.4151L4.71005 17.7158C4.08005 18.3511 4.52005 19.44 5.41005 19.44H18.5801C19.4801 19.44 19.9201 18.3511 19.2901 17.7158ZM16.0001 17.4234H8.00005V11.3736C8.00005 8.87302 9.51005 6.83625 12.0001 6.83625C14.4901 6.83625 16.0001 8.87302 16.0001 11.3736V17.4234ZM12.0001 22.4649C13.1001 22.4649 14.0001 21.5575 14.0001 20.4483H10.0001C10.0001 21.5575 10.8901 22.4649 12.0001 22.4649Z" fill="#A3AED0"/>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_0_1010">
+                            <rect width="24" height="24.1993" fill="white" transform="translate(0 0.282288)"/>
+                          </clipPath>
+                        </defs>
+                      </svg>
+  
+                    </div>
+  
+                    <div class="mainbody-title-profile-pic">
+  
+                      <img  src="/Avatar Style 6.png" alt="pic">
+  
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- mainbody body -->
+
+                <div class="mainbody-body col-md-7">
+
+                    <div>
+                        <img class="cover-image" src="/Background Image.png" alt="">
+                        <!-- <img class="ed-profilepic" id="viewProfilePic" src="" alt=""> -->
+                        <div class="ed-profilepic" id="viewProfilePic">
+
+                        </div>
+                    </div>
+
+
+                    <div class="profile-name-email">
+                        <p class="profile-name" id="fullName"></p>
+                        <p class="profile-email" id="viewEmail"></p>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12 details-container">
+                        <div class="col-md-4 shadow">
+                          <div class="details">
+                            <p class="details-head">Gender</p>
+                            <p class="details-body" id="viewGender">Male</p>
+                          </div>
+                        </div>
+                        <div class="col-md-4 shadow">
+                          <div class="details">
+                            <p class="details-head">Age</p>
+                            <p class="details-body" id="viewAge"></p>
+                          </div>
+                        </div>
+                        <div class="col-md-4 shadow">
+                          <div class="details">
+                            <p class="details-head">Date Of Birth</p>
+                            <p class="details-body" id="viewDOB">20 December 1985</p>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <div class="details-container">
+                        <div class="col-md-6 shadOw">
+                          <div class="details">
+                            <p class="details-head">Phone Number</p>
+                            <p class="details-body" id="viewPhoneNumber"></p>
+                          </div>
+                        </div>
+                    
+                        <div class="col-md-6 shadOw">
+                          <div class="details">
+                            <p class="details-head">Qualifications</p>
+                            <p class="details-body" id="viewQualification"></p>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <div class="details-container">
+                        <div class="col-md-6 shadOw">
+                          <div class="details">
+                            <p class="details-head">Address</p>
+                            <p class="details-body" id="viewAddress"></p>
+                          </div>
+                        </div>
+                    
+                        <div class="col-md-6 shadOw">
+                          <div class="details">
+                            <p class="details-head">Username</p>
+                            <p class="details-body" id="viewUsername"></p>
+                          </div>
+                        </div>
+                      </div>
+                    
+                    </div>
+
+                    <div class="buttons-section">
+                      <button class="btn-delete" type="button" id="ViewEmployeeDeteButton">Delete</button>
+                      <button class="btn-editDetails" type="button" onclick="editEmployeeEd()">Edit Details</button>
+                    </div>
+
+                </div>
+
+                
+
+                  
+
+                <hr class="ed-mainbody-hr">
+                  <div class="mainbody-footer">
+                    
+                    <p class="footer-text-rights">© 2023  All Rights Reserved. <p class="footer-text-stackup"> Stackup</p></p>
+                    <a class="footer-text-terms" href="#">Terms of Use</a>
+                    <a class="footer-text-policy" href="#">Privacy Policy</a>
+                  </div>
+
+
+
+
+                  
+                  <!-- edit employee form -->
+
+                   <div class="editEmployee-div" id="editEmployeeEd">
+                    <div class="col-lg-12 x-style">
+                      
+                      <div class="col-md-12 d-flex justify-content-between edit-employee-header">
+                        <h3 class="heading">Edit Employee</h3>
+                        <button class="edit-employee-close-button" onclick="cancelEd()">
+                          <i class="fa-solid fa-x"></i>
+                        </button>
+                      </div>
+                  
+                      <div class="col-md-12 edit-pic-button">
+                        
+                        <div class="col-md-2 dashed-border">
+                          <img id="viewEditImageShow" class="edit-employee-pic" alt="pic">
+                        </div>
+                        
+                        <label for="viewEditImageUpload">
+                          <input type="file" accept="image/*" id="viewEditImageUpload" hidden>
+                          <span>change</span>
+                        </label>
+                  
+                      </div>
+                  
+                      <form class="row g-3" id="viewEditEmployeeForm">
+                  
+                        <div class="col-md-3 col_4">
+                          <label for="viewEditSalutation" class="form-label star">Salutation</label>
+                          <select id="viewEditSalutation" class="form-select">
+                            <option selected>Select</option>
+                            <option>Mr.</option>
+                            <option>Mrs.</option>
+                          </select>
+                        </div>
+                        <div class="mb-3 col-md-5 mar-bot col_4">
+                          <label for="viewEditFirstName" class="form-label star">First Name</label>
+                          <input type="text" class="form-control" id="viewEditFirstName" placeholder="john">
+                        </div>
+                        <div class="mb-3 col-md-4 mar-bot col_4">
+                          <label for="viewEditLastName" class="form-label star">Last Name</label>
+                          <input type="text" class="form-control" id="viewEditLastName" placeholder="doe">
+                        </div>
+                  
+                        <div class="col-md-6 mt-1 mt_3">
+                          <label for="viewEditEmail" class="form-label star">Email Address</label>
+                          <input type="email" class="form-control" id="viewEditEmail" placeholder="mail@simmmple.com">
+                        </div>
+                        <div class="col-md-6 mt-1 mt_3">
+                          <label for="viewEditPhonenumber" class="form-label star">Mobile Number</label>
+                          <input type="text" class="form-control" id="viewEditPhonenumber" placeholder="enter mobile number">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="viewEditDOB" class="form-label star">Date of birth</label>
+                          <input type="date" class="form-control p-input" id="viewEditDOB"
+                            placeholder="select date of birth">
+                        </div>
+                        <div class="col-md-6">
+                          <div class="star">
+                            <label for="viewEditMale" class="form-label">Gender</label>
+                          </div>
+                          <div class="d-flex align-items-center margin">
+                            <div class="form-check form-check-inline padding">
+                              <input type="radio" id="viewEditMale" name="viewEditgender" value="Male" >
+                              <label for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input type="radio" id="viewEditFemale" name="viewEditgender" value="Female">
+                              <label for="female">Female</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label for="viewEditQualifications" class="form-label star">Qualifications</label>
+                          <input type="text" class="form-control" id="viewEditQualifications" placeholder="enter your qualification">
+                        </div>
+                        <div class="col-12">
+                          <label for="viewEditAddress" class="form-label star">Address</label>
+                          <input type="text" class="form-control" id="viewEditAddress" placeholder="enter address">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="viewEditCountry" class="form-label star">Country</label>
+                          <select id="viewEditCountry" class="form-select">
+                            <option selected>Select Country</option>
+                            <option>India</option>
+                            <option>USA</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="viewEditState" class="form-label star">State</label>
+                          <select id="viewEditState" class="form-select">
+                            <option selected>Select State</option>
+                            <option>Kerala</option>
+                            
+                          </select>
+                        </div>
+                        <div class="mb-3 col-md-6 mar-bot">
+                          <label for="viewEditCity" class="form-label star">City</label>
+                          <input type="text" class="form-control" id="viewEditCity" placeholder="enter city">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <label for="viewEditPinZip" class="form-label star">Pin/Zip</label>
+                          <input type="text" class="form-control" id="viewEditPinZip" placeholder="enter pin/zip">
+                        </div>
+                      </form>
+
+
+
+                      <div class="editEmployee-buttons">
+                        <button class="editEmployee-cancel-btn" type="button" onclick="cancelEd()">Cancel</button>
+                        <button class="editEmployee-add-btn" type="button" id="viewEditSubmitBtn">Save changes</button>
+                      </div>
+
+
+
+                  
+                    </div>
+                  </div> 
+                  <!-- delete employee -->
+
+                  <div class="dialogue-delete" id="deleteEmployeePopupMenuED">
+                  
+                    <div class="delete-heading-button d-flex justify-content-between">
+                      <h1 class="dialogue-title">Delete Employee</h1>
+                      <button class="edit-employee-close-button">
+                        <i class="fa-solid fa-x" onclick="cancelEd()"></i>
+                      </button>
+                    </div>
+                  
+                    <h2 class="dialogue-para">Are you sure you want to delete this employee?</h2>
+                  
+                    <div class="dialogue-delete-buttons">
+                      <button class="delete-cancel-btn" type="button" onclick="cancelEd()">Cancel</button>
+                      <button class="delete-delete-btn" type="button" id="popupDeletebuttonEd">Delete</button>
+                    </div>
+                  
+                  </div>
+
+
+
+
+              </div>
+
+              
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div class="alert alert-info editedAlert" id="addedAlert"><strong>Info!  </strong> Employee deleted.</div>
+
+    <div class="background-blur-ed" id="overlayEd" onclick="cancelEd()"></div>
+    <script src="./PRJSemployeeDetails.js"></script>
+    
+
+</body>
+</html>
