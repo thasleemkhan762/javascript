@@ -818,9 +818,13 @@ hr{
     }
      .editEmployee-div{
         visibility: hidden;
+        /* //////////////////// */
+        opacity: 0;
+        transition: visibility 0s, opacity 0.2s linear;
      }
       .dialogue-delete{
         visibility: hidden;
+        transition: visibility 0s, opacity 0.2s linear;
       }
 
       img.tableProfilePic {
@@ -989,3 +993,4 @@ hr{
         gap: 6px;
         justify-content: flex-end;
     }
+

@@ -44,9 +44,11 @@ function editEmployee(id) {
 
   const editEmployee = document.getElementById("editEmployee");
   editEmployee.style.visibility = "visible";
+  editEmployee.style.opacity = "1";
 
   const overlay = document.getElementById("overlay");
   overlay.style.visibility = "visible";
+  overlay.style.opacity = "1";
 
   const options = document.getElementById("miniOption");
   options.style.visibility = "hidden";
@@ -105,10 +107,22 @@ function cancel(){
   }
 
   const editEmployee = document.getElementById("editEmployee");
-  editEmployee.style.visibility="hidden";
+  editEmployee.style.opacity="0";
+  
+  //timeout function
+  const edittimeout = setTimeout(editemployeeout,500);
+  function editemployeeout(){
+    editEmployee.style.visibility="hidden";
+  }
 
   const deleteEmployeePopupMenu = document.getElementById("deleteEmployeePopupMenu");
-  deleteEmployeePopupMenu.style.visibility="hidden";
+  deleteEmployeePopupMenu.style.opacity ="0";
+  //timeout function
+  const deletetimeout = setTimeout(deleteemployeeout,500);
+  function deleteemployeeout(){
+    deleteEmployeePopupMenu.style.visibility="hidden";
+  }
+
 
   const overlay = document.getElementById("overlay");
   overlay.style.opacity = "0";
@@ -396,9 +410,11 @@ function deleteEmployeePopupMenu(id){
   console.log(id);
   const deleteEmployeePopupMenu = document.getElementById("deleteEmployeePopupMenu");
   deleteEmployeePopupMenu.style.visibility="visible";
+  deleteEmployeePopupMenu.style.opacity = "1";
   // overlay
   const overlay = document.getElementById("overlay");
   overlay.style.visibility="visible";
+  overlay.style.opacity = "1";
   // delete button in popup
   const delebutton = document.getElementById('popupDeletebutton')
   delebutton.addEventListener('click', () => {
