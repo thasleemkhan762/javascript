@@ -61,12 +61,20 @@ function addEmployeeSuccessPopup() {
 
   const addEmployeeSuccessMsg = document.getElementById("addEmployeeSuccessMsg");
   addEmployeeSuccessMsg.style.visibility = "visible";
+  addEmployeeSuccessMsg.style.opacity = "1";
 
   const overlay = document.getElementById("overlay");
   overlay.style.visibility = "visible";
+  overlay.style.opacity = "1";
 
   const addEmployee = document.getElementById("addEmployee");
-  addEmployee.style.visibility = "hidden";
+  addEmployee.style.opacity = "0";
+
+  //time out function
+  const mytimeout = setTimeout(addEmployeeout,500);
+  function addEmployeeout(){
+    addEmployee.style.visibility="hidden";
+  }
 
   const reup = document.getElementById("reup");
   reup.style.visibility = "hidden";
@@ -79,14 +87,21 @@ function addEmployeeSuccessPopup() {
 // edit employee successs msg popup
 function editEmployeeSuccessPopup() {
 
-  const addEmployeeSuccessMsg = document.getElementById("editEmployeeSuccessMsg");
-  addEmployeeSuccessMsg.style.visibility = "visible";
+  const editEmployeeSuccessMsg = document.getElementById("editEmployeeSuccessMsg");
+  editEmployeeSuccessMsg.style.visibility = "visible";
+  editEmployeeSuccessMsg.style.opacity = "1";
 
   const overlay = document.getElementById("overlay");
   overlay.style.visibility = "visible";
+  overlay.style.opacity = "1";
 
-  const addEmployee = document.getElementById("editEmployee");
-  addEmployee.style.visibility = "hidden";
+  const editEmployee = document.getElementById("editEmployee");
+  editEmployee.style.opacity = "0";
+  //timeout function
+  const mytimeout = setTimeout(editEmployeeclose,500);
+  function editEmployeeclose () {
+    editEmployee.style.visibility = "hidden";
+  }
 
 }
 

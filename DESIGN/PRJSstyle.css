@@ -868,6 +868,8 @@ hr{
         z-index: 1;
         background: #FFF;
         visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.2s linear;
     }
 
     .success-para{
@@ -908,6 +910,8 @@ hr{
         z-index: 1;
         background: #FFF;
         visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.2s linear;
     }
 
     .dialogue-para{
