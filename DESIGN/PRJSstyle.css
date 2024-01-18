@@ -250,6 +250,7 @@ hr{
         margin-bottom: 0;
         color: #8e9499;
         width: 120px;
+        font-size: 14px;
     }
     .timedate{
         display: flex;
@@ -260,6 +261,7 @@ hr{
      
         margin-bottom: 0;
         color: #8e9499;
+        font-size: 14px;
     }
 
     .searchbar-icon-pic {
@@ -937,6 +939,10 @@ hr{
 
     /* error validation */
     .nullSelectionText{
+        color: #FF1818;
+        margin-left: 15px;
+    }
+    .nullSelectionTextt{
         color: #FF1818;
         margin-left: 15px;
     }

@@ -383,6 +383,9 @@ hr{
         margin-left: 20px;
         margin-right: 22px;
     }
+    .editEmployee-div{
+        transition: visibility 0s, opacity 0.2s linear;
+    }
 
     .employee-list-head{
         display: flex;
@@ -569,6 +572,7 @@ hr{
         top: 0;
         background: rgba(5, 3, 16, 0.80);
         visibility: hidden;
+        transition: visibility 0s, opacity 0.2s linear;
     }
 
     .editedAlert{

@@ -7,21 +7,37 @@ console.log("url is:",id);
 
 console.log(id);
 
+
+
+
 function editEmployeeEd(){
     const editEmployeeEd = document.getElementById("editEmployeeEd");
     editEmployeeEd.style.visibility="visible";
+    editEmployeeEd.style.opacity="1";
     const overlayEd = document.getElementById("overlayEd");
     overlayEd.style.visibility="visible";
+    overlayEd.style.opacity="1";
 
     editData(id)
  }
 
  function cancelEd () {
     const editEmployeeEd = document.getElementById("editEmployeeEd");
-    editEmployeeEd.style.visibility="hidden";
+    
+    editEmployeeEd.style.opacity="0";
+
+    const timeout = setTimeout(editemployeeout,500);
+    function editemployeeout(){
+      editEmployeeEd.style.visibility="hidden";
+    }
+    
 
     const overlayEd = document.getElementById("overlayEd");
-    overlayEd.style.visibility="hidden";
+    overlayEd.style.opacity="0";
+    const timeoutoverlay = setTimeout(overlayout,500);
+    function overlayout(){
+      overlayEd.style.visibility="hidden";
+    }
 
     const deleteEmployeePopupMenuED = document.getElementById("deleteEmployeePopupMenuED");
     deleteEmployeePopupMenuED.style.visibility = "hidden";
@@ -51,6 +67,9 @@ function editEmployeeEd(){
       document.getElementById("viewAddress").innerHTML = data.address;
       const userName = data.firstName + data.lastName;
       document.getElementById("viewUsername").innerHTML = userName;
+
+      const viewEmployeeHeaderTitle = document.getElementById("viewEmployeeHeaderTitle");
+      viewEmployeeHeaderTitle.innerText = `Dashboard / Employees /${data.salutation} ${data.firstName} ${data.lastName} `;
 
    });
  }

@@ -81,6 +81,7 @@ function addEmployeeSuccessPopup() {
 
   const changeText = document.getElementById("changeText");
   changeText.style.visibility = "hidden";
+  // getData();
 
 }
  
@@ -111,9 +112,52 @@ function editEmployeeSuccessPopup() {
 
 // cancel button function
 function cancel(){
+  //add validation text///////////////////////////////////////////
+  document.getElementById("addSalutationNull").textContent = "";
+  document.getElementById("FirstNameNull").textContent = "";
+  document.getElementById("LastNameNull").textContent = "";
+  document.getElementById("addEmailNull").textContent = "";
+  document.getElementById("addphonenumberNull").textContent = "";
+  document.getElementById("QualificationsNull").textContent = "";
+  document.getElementById("addAddressNull").textContent = "";
+  document.getElementById("addCountryNull").textContent = "";
+  document.getElementById("addStateNull").textContent = "";
+  document.getElementById("addCityNull").textContent = "";
+  document.getElementById("addPinZipNull").textContent = "";
+  document.getElementById("nullImage").textContent = "";
+  document.getElementById("addDOBNull").textContent = "";
+  document.getElementById("nullGender").textContent = "";
+  ///////////////////////////////////////////////////////
+
+  //edit validation text
+  document.getElementById("editSalutationNill").textContent = "";
+  document.getElementById("editFirstNameNill").textContent = "";
+  document.getElementById("editLastNameNill").textContent = "";
+  document.getElementById("editEmailNill").textContent = "";
+  document.getElementById("editPhoneNumberNill").textContent = "";
+  document.getElementById("editQualificationsNill").textContent = "";
+  document.getElementById("editAddressNill").textContent = "";
+  document.getElementById("editCountryNill").textContent = "";
+  document.getElementById("editStateNill").textContent = "";
+  document.getElementById("editCityNill").textContent = "";
+  document.getElementById("editPinZipNill").textContent = "";
+  document.getElementById("editDOBNill").textContent = "";
+  document.getElementById("nillGender").textContent = "";
+
+
+    // document.querySelectorAll(".nullSelectionTextt").textContent = "";
+ 
+  
+
+  
+
   /////////////////////////////////////////////////////////////////////
   const addEmployee = document.getElementById("addEmployee");
   addEmployee.style.opacity = "0";
+  // scrolltop after animation
+  setTimeout(()=>{
+    addEmployee.scrollTop = 0;
+  },500);
 
   //time out function
   const mytimeout = setTimeout(addEmployeeout,500);
@@ -123,12 +167,15 @@ function cancel(){
 
   const editEmployee = document.getElementById("editEmployee");
   editEmployee.style.opacity="0";
+  // scrolltop after animation
+  setTimeout(()=>{
+    editEmployee.scrollTop = 0;
+  },500);
   
   //timeout function
-  const edittimeout = setTimeout(editemployeeout,500);
-  function editemployeeout(){
+  setTimeout(()=>{
     editEmployee.style.visibility="hidden";
-  }
+  },500);
 
   const deleteEmployeePopupMenu = document.getElementById("deleteEmployeePopupMenu");
   deleteEmployeePopupMenu.style.opacity ="0";
@@ -169,8 +216,11 @@ function cancel(){
   const changeText = document.getElementById("changeText");
   changeText.style.visibility = "hidden";
 
-  const editEmployeeForm = document.getElementById("editEmployeeForm");
-  editEmployeeForm.reset();
+  // const editEmployeeForm = document.getElementById("editEmployeeForm");
+
+  // setTimeout(()=>{
+  //   editEmployeeForm.reset();
+  // },500)
 
   // const nullText = document.querySelector('.nullSelectionText');
   // nullText.style.visibility = "hidden";
@@ -257,7 +307,7 @@ async function getData() {
         tab += `<tr>
                     <td></td>
                     <td>${formattedSerialNumber}</td>
-                    <td><img  class="tableProfilePic" style="height: 30px;" src='http://localhost:3000/employees/${user.id}/avatar'></img>${user.salutation} ${user.firstName} ${user.lastName}</td>
+                    <td><img id="avatarImage"  class="tableProfilePic" style="height: 30px;" src='http://localhost:3000/employees/${user.id}/avatar'></img>${user.salutation} ${user.firstName} ${user.lastName}</td>
                     <td>${user.email}</td>
                     <td>${user.phone}</td>
                     <td>${user.gender}</td>
@@ -554,20 +604,76 @@ addButton.addEventListener("click", (e) =>{
     // }
   
     //conditions
-    if (salutation === "Select") {
-      document.getElementById("editSalutationNill").textContent = "* Invalid select";
+
+    // phone number
+  if (!phonePattern.test(phone)) {
+    document.getElementById("editPhoneNumberNill").textContent = "* Invalid Phone Number";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("editPhoneNumber");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("editEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
+
+    // email
+    if (!emailPattern.test(email)) {
+      document.getElementById("editEmailNill").textContent = "* Last Name is required";
+  
+      // scrollintoview function
+      const scrollintoview = document.getElementById("editEmail");
+      scrollintoview.scrollIntoView();
+      const divScroll= document.getElementById("editEmployee");
+      divScroll.scrollBy(0,-50);
+  
       isValid = false;
     }
   
-    if (!namePattern.test(firstName)) {
-      document.getElementById("editFirstNameNill").textContent = "* First Name is required";
-      isValid = false;
-    }
+    // lastname
+  if (!namePattern.test(lastName)) {
+    document.getElementById("editLastNameNill").textContent = "* Last Name is required";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("editLastName");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("editEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
+
+
+     // firstname
+  if (!namePattern.test(firstName)) {
+    document.getElementById("editFirstNameNill").textContent = "* First Name is required";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("editFirstName");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("editEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
+
+     // salutation
+  if (salutation === "Select") {
+    document.getElementById("editSalutationNill").textContent = "* Invalid select";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("editSalutation");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("editEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
   
-    if (!namePattern.test(lastName)) {
-      document.getElementById("editLastNameNill").textContent = "* Last Name is required";
-      isValid = false;
-    }
+ 
+  
+   
   
     if (!emailPattern.test(email)) {
       document.getElementById("editEmailNill").textContent = "* Invalid Email";
@@ -726,6 +832,7 @@ async function updateData(id) {
     })
       .then((response) => response.json())
       .then((data) => {
+        getData();
         console.log("Success:", data);
       })
       .catch((error) => {
@@ -764,13 +871,14 @@ async function updateData(id) {
       body: formData,
     })
       .then((data) => {
+        getData();
         console.log("Success:", data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }
-
+  
   editEmployeeSuccessPopup();
 }
 
@@ -793,10 +901,17 @@ editImageUpload.onchange = function () {
 
 }
 
-//edit reload
+//edit success ok button
 const popupOkButtonEditSuccess = document.getElementById("popupOkButtonEditSuccess");
 popupOkButtonEditSuccess.addEventListener("click", () => {
-  window.location.reload();
+  // window.location.reload();
+  document.getElementById("overlay").style.opacity = "0";
+  document.getElementById("editEmployeeSuccessMsg").style.opacity = "0";
+
+  setTimeout(() => {
+    document.getElementById("editEmployeeSuccessMsg").style.visibility = "hidden";
+  document.getElementById("overlay").style.visibility = "hidden";
+  }, 500);
  });
 
 
@@ -808,8 +923,170 @@ popupOkButtonEditSuccess.addEventListener("click", () => {
 
 
 // add employee submission
-function addEmployeeSubmission() {
+// function addEmployeeSubmission() {
 
+//   const sal utation = document.getElementById("addSalutation").value;
+//   const firstname = document.getElementById("FirstName").value;
+//   const lastname = document.getElementById("LastName").value;
+//   const email = document.getElementById("addEmail").value;
+//   const phn = document.getElementById("addphonenumber").value;
+//   const dateOfBirth = document.getElementById("addDOB").value;
+//   const address = document.getElementById("addAddress").value;
+//   const city = document.getElementById("addCity").value;
+//   const Qualifications = document.getElementById("Qualifications").value;
+//   const gender = document.querySelector ('input[name="gender"]:checked').value;
+//   const country = document.getElementById("addCountry").value;
+//   const state = document.getElementById("addState").value;
+//   const pinZip = document.getElementById("addPinZip").value;
+//   const [year, month, day] = dateOfBirth.split("-");
+//   const formattedDate = `${day}-${month}-${year}`;
+
+//   const employeeObject = {
+//     salutation: salutation,
+//     firstName: firstname,
+//     lastName: lastname,
+//     email: email,
+//     phone: phn,
+//     dob: formattedDate,
+//     qualifications: Qualifications,
+//     gender: gender,
+//     address: address,
+//     country: country,
+//     state: state,
+//     city: city,
+//     pin: pinZip,
+//     username: firstname,
+//     password: lastname,
+//   };
+//   fetch("http://localhost:3000/employees", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(employeeObject),
+//   })
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((data) => {
+  
+//   console.log("Success", data);
+//   //////////image upload//////////////
+//   console.log('API Response:', data);
+
+//   // getData();
+//   const uploadImage = document.getElementById("uploadImage");
+//   const formData = new FormData();
+//   formData.append("avatar", uploadImage.files[0]);
+
+//   fetch(`http://localhost:3000/employees/${data.id}/avatar`, {
+//     method: "POST",
+//     body: formData
+//   })
+//   .then((res) => {
+//     console.log("Image uploaded:", res);
+//     getData();
+
+//   })
+//   .catch((error) => {
+//     console.error("Error uploading image:", error);
+//   })
+
+// })
+//   .catch((error) => {
+//     console.error('Error:', error);
+//   });
+//   getData();
+//   addEmployeeSuccessPopup() 
+// }
+
+
+
+//try
+// function addEmployeeSubmission() {
+//   const salutation = document.getElementById("addSalutation").value;
+//   const firstname = document.getElementById("FirstName").value;
+//   const lastname = document.getElementById("LastName").value;
+//   const email = document.getElementById("addEmail").value;
+//   const phn = document.getElementById("addphonenumber").value;
+//   const dateOfBirth = document.getElementById("addDOB").value;
+//   const address = document.getElementById("addAddress").value;
+//   const city = document.getElementById("addCity").value;
+//   const Qualifications = document.getElementById("Qualifications").value;
+//   const gender = document.querySelector('input[name="gender"]:checked').value;
+//   const country = document.getElementById("addCountry").value;
+//   const state = document.getElementById("addState").value;
+//   const pinZip = document.getElementById("addPinZip").value;
+//   const [year, month, day] = dateOfBirth.split("-");
+//   const formattedDate = `${day}-${month}-${year}`;
+
+//   const employeeObject = {
+//     salutation: salutation,
+//     firstName: firstname,
+//     lastName: lastname,
+//     email: email,
+//     phone: phn,
+//     dob: formattedDate,
+//     qualifications: Qualifications,
+//     gender: gender,
+//     address: address,
+//     country: country,
+//     state: state,
+//     city: city,
+//     pin: pinZip,
+//     username: firstname,
+//     password: lastname,
+//   };
+
+//   let employeeData;
+
+//    fetch("http://localhost:3000/employees", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(employeeObject),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log("Employee data added successfully", data);
+//       employeeData = data;
+
+//       // Image upload
+//       const uploadImage = document.getElementById("uploadImage");
+//       const formData = new FormData();
+//       formData.append("avatar", uploadImage.files[0]);
+
+//       // const employeeId = data.id;
+//       const user = data;
+
+//       return fetch(`http://localhost:3000/employees/${user.id}/avatar`, {
+//         method: "POST",
+//         body: formData,
+//       });
+//     })
+//     .then((res) => {
+//       if (res.ok) {
+//         console.log("Image uploaded successfully:", res);
+//         // Now that the image is uploaded, update the DOM
+//         const avatarImage = document.getElementById("avatarImage");
+//         const imageUrl = `http://localhost:3000/employees/${employeeData.id}/avatar`;
+//         avatarImage.src = imageUrl;
+
+//         // getData();
+//         // singleDataUpdate();
+//         addEmployeeSuccessPopup();
+//       } else {
+//         console.error("Error uploading image:", res);
+//       }
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
+// }
+
+// last edited
+function addEmployeeSubmission() {
   const salutation = document.getElementById("addSalutation").value;
   const firstname = document.getElementById("FirstName").value;
   const lastname = document.getElementById("LastName").value;
@@ -819,7 +1096,7 @@ function addEmployeeSubmission() {
   const address = document.getElementById("addAddress").value;
   const city = document.getElementById("addCity").value;
   const Qualifications = document.getElementById("Qualifications").value;
-  const gender = document.querySelector ('input[name="gender"]:checked').value;
+  const gender = document.querySelector('input[name="gender"]:checked').value;
   const country = document.getElementById("addCountry").value;
   const state = document.getElementById("addState").value;
   const pinZip = document.getElementById("addPinZip").value;
@@ -843,6 +1120,8 @@ function addEmployeeSubmission() {
     username: firstname,
     password: lastname,
   };
+  let employeeData;
+
   fetch("http://localhost:3000/employees", {
     method: "POST",
     headers: {
@@ -850,40 +1129,197 @@ function addEmployeeSubmission() {
     },
     body: JSON.stringify(employeeObject),
   })
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-  
-  console.log("Success", data);
-  //////////image upload//////////////
-  console.log('API Response:', data);
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Employee data added successfully", data);
+      employeeData = data;
 
-  getData();
-  const uploadImage = document.getElementById("uploadImage");
-  const formData = new FormData();
-  formData.append("avatar", uploadImage.files[0]);
+     
 
-  fetch(`http://localhost:3000/employees/${data.id}/avatar`, {
-    method: "POST",
-    body: formData
-  })
-  .then((res) => {
-    console.log("Image uploaded:", res);
-       
+      // Image upload
+      const uploadImage = document.getElementById("uploadImage");
+      const formData = new FormData();
+      formData.append("avatar", uploadImage.files[0]);
 
-  })
-  .catch((error) => {
-    console.error("Error uploading image:", error);
-  })
+        // Assuming 'data' is the newly added user object
+        const user = data;
 
-})
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-  addEmployeeSuccessPopup() 
+      fetch(`http://localhost:3000/employees/${user.id}/avatar`, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => {
+          if (res.ok) {
+            console.log("Image uploaded successfully:", res);
+
+            setTimeout(() => {
+            // Appending the new row to the table
+            let serialNumber = document.getElementById('tbody').childElementCount + 1;
+            let formattedSerialNumber = serialNumber > 9 ? `#${serialNumber}` : `#0${serialNumber}`;
+
+            let newRow = `<tr>
+              <td></td>
+              <td>${formattedSerialNumber}</td>
+              <td>
+                <img id="avatarImage" class="tableProfilePic" style="height: 30px;" src='http://localhost:3000/employees/${user.id}/avatar'></img>
+                ${salutation} ${firstname} ${lastname}  
+              </td>
+              <td>${email}</td>
+              <td>${phn}</td>
+              <td>${gender}</td>
+              <td>${formattedDate}</td>
+              <td>${country}</td>
+              <td>
+              <button class="button-option" id="threeDotButton" onclick="optionMenu('${user.id}')"  >
+              <div >
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1_167)">
+                    <path d="M6 10.1947C4.9 10.1947 4 11.0947 4 12.1947C4 13.2947 4.9 14.1947 6 14.1947C7.1 14.1947 8 13.2947 8 12.1947C8 11.0947 7.1 10.1947 6 10.1947ZM18 10.1947C16.9 10.1947 16 11.0947 16 12.1947C16 13.2947 16.9 14.1947 18 14.1947C19.1 14.1947 20 13.2947 20 12.1947C20 11.0947 19.1 10.1947 18 10.1947ZM12 10.1947C10.9 10.1947 10 11.0947 10 12.1947C10 13.2947 10.9 14.1947 12 14.1947C13.1 14.1947 14 13.2947 14 12.1947C14 11.0947 13.1 10.1947 12 10.1947Z" fill="#4318FF"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_167">
+                      <rect width="24" height="24" fill="white" transform="translate(0 0.194656)"/>
+                    </clipPath>
+                   </defs>
+                 </svg>
+               </div>
+              <div id="optionMini">
+              
+              </div>
+
+            </button>
+              </td>
+            </tr>`;
+
+            // Appending the new row to the table body
+            document.getElementById('tbody').insertAdjacentHTML('beforeend', newRow);
+
+            
+            addEmployeeSuccessPopup();
+
+            }, 100);
+
+          } else {
+            console.error("Error uploading image:", res);
+          }
+        })
+        .catch((error) => {
+          console.error("Error uploading image:", error);
+        });
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }
 
+
+
+
+
+///////////////////////////////////////////
+
+// function singleDataUpdate() {
+//   const apiUrl = 'http://localhost:3000/employees';
+
+//   // Step 1: Make a GET request to retrieve data
+//   var xhrGet = new XMLHttpRequest();
+//   xhrGet.open('GET', apiUrl, true);
+
+//   xhrPost.onload = function () {
+//     if (xhrPost.status == 200 || xhrPost.status == 201) {
+//       // Handling success
+//       var newUser = JSON.parse(xhrPost.responseText);
+//       console.log('Server Response (POST):', newUser);
+
+//       // Update the table with the retrieved data (similar to your existing code)
+//       users.forEach(function (user, index) {
+//         // ... (your existing code to update the table)
+//       });
+//     } else {
+//       console.error('GET request failed. Returned status of ' + xhrGet.status);
+//     }
+//   };
+
+//   xhrGet.send();
+
+//   // Step 2: Make a POST request to add a new employee
+//   var xhrPost = new XMLHttpRequest();
+//   xhrPost.open('POST', apiUrl, true);
+//   xhrPost.setRequestHeader('Content-Type', 'application/json');
+
+//   // Replace the following object with the data you want to send in the POST request
+//   const salutation = document.getElementById("addSalutation").value;
+//   const firstname = document.getElementById("FirstName").value;
+//   const lastname = document.getElementById("LastName").value;
+//   const email = document.getElementById("addEmail").value;
+//   const phn = document.getElementById("addphonenumber").value;
+//   const dateOfBirth = document.getElementById("addDOB").value;
+//   const address = document.getElementById("addAddress").value;
+//   const city = document.getElementById("addCity").value;
+//   const Qualifications = document.getElementById("Qualifications").value;
+//   const gender = document.querySelector('input[name="gender"]:checked').value;
+//   const country = document.getElementById("addCountry").value;
+//   const state = document.getElementById("addState").value;
+//   const pinZip = document.getElementById("addPinZip").value;
+//   const [year, month, day] = dateOfBirth.split("-");
+//   const formattedDate = `${day}-${month}-${year}`;
+
+//   const newEmployeeData = {
+//     salutation: salutation,
+//     firstName: firstname,
+//     lastName: lastname,
+//     email: email,
+//     phone: phn,
+//     dob: formattedDate,
+//     qualifications: Qualifications,
+//     gender: gender,
+//     address: address,
+//     country: country,
+//     state: state,
+//     city: city,
+//     pin: pinZip,
+//     username: firstname,
+//     password: lastname,
+//   };
+
+//         // Image upload
+//         const uploadImage = document.getElementById("uploadImage");
+//         const formData = new FormData();
+//         formData.append("avatar", uploadImage.files[0]);
+
+//   xhrPost.onload = function () {
+//     if (xhrPost.status == 200) {
+//       var newUser = JSON.parse(xhrPost.responseText);
+//       console.log('Server Response (POST):', newUser);
+
+//       // Update the table with the new data
+//       let serialNumber = document.getElementById('tbody').childElementCount + 1;
+//       let formattedSerialNumber = serialNumber > 9 ? `#${serialNumber}` : `#0${serialNumber}`;
+
+//       let updatedTableHtml = `<tr>
+//         <td></td>
+//         <td>${formattedSerialNumber}</td>
+//         <td><img id="avatarImage" class="tableProfilePic" style="height: 30px;" src='http://localhost:3000/employees/${newUser.id}/avatar'></img>${newUser.salutation} ${newUser.firstName} ${newUser.lastName}</td>
+//         <td>${newUser.email}</td>
+//         <td>${newUser.phone}</td>
+//         <td>${newUser.gender}</td>
+//         <td>${newUser.dob}</td>
+//         <td>${newUser.country}</td>
+//         <td>
+//           <button class="button-option" id="threeDotButton" onclick="optionMenu('${newUser.id}')">
+//             <!-- Your SVG content here -->
+//           </button>
+//         </td>
+//       </tr>`;
+
+//       document.getElementById('tbody').innerHTML += updatedTableHtml;
+//     } else {
+//       console.error('POST request failed. Returned status of ' + xhrPost.status);
+//     }
+//   };
+
+//   xhrPost.send(JSON.stringify(newEmployeeData));
+// }
 
 
 
@@ -929,9 +1365,10 @@ addButton.addEventListener("click", (e) =>{
     return;
   }
   addEmployeeSubmission();
+  // singleDataUpdate();
 });
 
-//////validation////////////////
+////// add employee validation////////////////
 function formValidation() {
   const salutation = document.getElementById("addSalutation").value.trim();
   const firstName = document.getElementById("FirstName").value.trim();
@@ -956,41 +1393,92 @@ function formValidation() {
   const phonePattern = /^\d{10}$/;
   const namePattern = /^[A-Za-z]+$/;
   let isValid = true;
+  
+
+  
+  
+  
+  
+  // phone number
+  if (!phonePattern.test(phone)) {
+    document.getElementById("addphonenumberNull").textContent = "* Invalid Phone Number";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("addphonenumber");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("addEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
+
+  // email
+  if (!emailPattern.test(email)) {
+    document.getElementById("addEmailNull").textContent = "* Invalid Email";
+    // scrollintoview function
+    const scrollintoview = document.getElementById("addEmail");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("addEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
+
+  // lastname
+  if (!namePattern.test(lastName)) {
+    document.getElementById("LastNameNull").textContent = "* Last Name is required";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("FirstName");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("addEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
+
+  // firstname
+  if (!namePattern.test(firstName)) {
+    document.getElementById("FirstNameNull").textContent = "* First Name is required";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("FirstName");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("addEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
+
+  // salutation
+  if (salutation === "Select") {
+    document.getElementById("addSalutationNull").textContent = "* Invalid select";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("addSalutation");
+    scrollintoview.scrollIntoView();
+    const divScroll= document.getElementById("addEmployee");
+    divScroll.scrollBy(0,-50);
+
+    isValid = false;
+  }
+
   // image_validation-----------------
   const uploadImage = document.getElementById("uploadImage");
   const nullImage = document.getElementById("nullImage");
   // image validation condition
   if (uploadImage.files.length === 0) {
     nullImage.textContent = "* Please select an image.";
+
+    // scrollintoview function
+    const scrollintoview = document.getElementById("addEmployee");
+    scrollintoview.scrollTop = 0;
+    // const divScroll= document.getElementById("addEmployee");
+    // divScroll.scrollBy(0,-50);
+
     isValid = false;
   } else {
     nullImage.textContent = "";
-  }
-
-  //conditions
-  if (salutation === "Select") {
-    document.getElementById("addSalutationNull").textContent = "* Invalid select";
-    isValid = false;
-  }
-
-  if (!namePattern.test(firstName)) {
-    document.getElementById("FirstNameNull").textContent = "* First Name is required";
-    isValid = false;
-  }
-
-  if (!namePattern.test(lastName)) {
-    document.getElementById("LastNameNull").textContent = "* Last Name is required";
-    isValid = false;
-  }
-
-  if (!emailPattern.test(email)) {
-    document.getElementById("addEmailNull").textContent = "* Invalid Email";
-    isValid = false;
-  }
-
-  if (!phonePattern.test(phone)) {
-    document.getElementById("addphonenumberNull").textContent = "* Invalid Phone Number";
-    isValid = false;
   }
 
   if (dobValue === "") {
@@ -1006,8 +1494,7 @@ function formValidation() {
   }
 
   if (qualifications === "") {
-    document.getElementById("QualificationsNull").textContent =
-      "* Qualifications is required";
+    document.getElementById("QualificationsNull").textContent = "* Qualifications is required";
     isValid = false;
   }
 
@@ -1069,8 +1556,33 @@ addEmployeeSuccessMsg.style.visibility = "hidden";
 // overlay
 const overlay = document.getElementById("overlay");
 overlay.style.visibility = "hidden";
+
+const addEmployeeForm = document.getElementById("addEmployeeForm");
+addEmployeeForm.reset();
+addEmployeeForm.scrollTop = 0;
+
+
+const image = document.getElementById("image");
+image.src='';
+
+const imageCard = document.getElementById("imageCard");
+imageCard.style.width = "100%";
+
+const imagediv = document.getElementById("image");
+imagediv.style.display = "none";
+
+const hidden = document.getElementById("hidden");
+hidden.style.display = "block";
+
+const reUp = document.getElementById("reup");
+reUp.style.visibility = "hidden";
+
+const changeText = document.getElementById("changeText");
+changeText.style.visibility = "hidden";
+
 // reload
-window.location.reload();
+// window.location.reload();
+
 });
 
 
