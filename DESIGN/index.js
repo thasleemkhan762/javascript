@@ -340,7 +340,7 @@ async function getData() {
    .catch((err) => {
       console.log(err);
    });
-}
+};
 
 //pagination
 var CurrentPage = 1;
